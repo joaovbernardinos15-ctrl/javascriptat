@@ -122,19 +122,3 @@
 
 
 
-
-"use strict"; 
- 
-const prefix = "username_";  // só está mostrando username_
- 
-let userName = "Adam"; 
-// const userName = "Adam"; 
- 
-let prefixedUserName; 
-// const prefixedUserName; 
- 
-userName = "Adam"; 
-prefixedUserName = prefix + userName; 
- 
-console.log(prefixedUserName /*+ prefixedUserName2*/); 
-// console.log(prefixedUserName2); 
