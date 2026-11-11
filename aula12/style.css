@@ -1,0 +1,51 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+    margin: 0;
+    background: #eef3fa;
+    color: #15263d;
+    font: 1rem/1.5 Inter, system-ui, sans-serif;
+}
+main { width: min(58rem, 100% - 2rem); margin: 2.5rem auto; }
+h1 { margin: 0 0 1rem; }
+h2 { margin: 0 0 1rem; font-size: 1.25rem; }
+section {
+    margin-bottom: 1rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border: 1px solid #d7e1ee;
+    border-radius: 0.85rem;
+    background: #fff;
+}
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+label { display: block; margin-bottom: 0.25rem; font-weight: 600; }
+input {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #8496ac;
+    border-radius: 0.4rem;
+    font: inherit;
+}
+#busca { max-width: 28rem; }
+button {
+    padding: 0.55rem 0.8rem;
+    border: 1px solid transparent;
+    border-radius: 0.4rem;
+    background: #1c52a5;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+}
+.acoes { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.secundario { background: #e7eef9; color: #17335c; }
+.excluir { background: #fff0f0; color: #8e2424; }
+:focus-visible { outline: 3px solid #2764c0; outline-offset: 2px; }
+#mensagem:empty { display: none; }
+#mensagem { margin: 0.75rem 0 0; }
+.tabela { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 0.7rem; border-bottom: 1px solid #d7e1ee; overflow-wrap: anywhere; }
+th { background: #edf3fa; }
+@media (max-width: 36rem) {
+    form { grid-template-columns: 1fr; }
+    th, td { padding: 0.4rem; }
+}
