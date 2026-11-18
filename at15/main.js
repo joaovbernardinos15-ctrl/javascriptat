@@ -2,6 +2,9 @@
 
 const CHAVE = "mural-aniversarios";
 const form = document.getElementById("form");
+const campoNome = document.getElementById("nome");
+const campoNasc = document.getElementById("nasc");
+const campoCor = document.getElementById("cor");
 const lista = document.getElementById("pessoas");
 const vazio = document.getElementById("vazio");
 const btnTema = document.getElementById("btn-tema");
@@ -76,8 +79,8 @@ function desenhar() {
 /* ---------- cadastro ---------- */
 form.addEventListener("submit", e => {
   e.preventDefault();
-  const nome = form.nome.value.trim();
-  const nasc = form.nasc.value;
+  const nome = campoNome.value.trim();
+  const nasc = campoNasc.value;
   const hoje = new Date().toISOString().slice(0, 10);
 
   document.getElementById("erro-nome").textContent = nome ? "" : "Digite o nome da pessoa.";
@@ -85,14 +88,14 @@ form.addEventListener("submit", e => {
     !nasc ? "Escolha a data de nascimento." : nasc > hoje ? "A data não pode estar no futuro." : "";
   if (!nome || !nasc || nasc > hoje) return;
 
-  const p = { id: Date.now(), nome, nasc, cor: form.cor.value };
+  const p = { id: Date.now(), nome, nasc, cor: campoCor.value };
   pessoas.push(p);
   salvar();
   vazio.hidden = true;
   lista.append(criarCartao(p, true));
   form.reset();
-  form.cor.value = "#ff6b6b";
-  form.nome.focus();
+  campoCor.value = "#ff6b6b";
+  campoNome.focus();
   confete();
 });
 
