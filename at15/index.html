@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mural de Aniversários</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="confete" aria-hidden="true"></canvas>
+
+  <header class="topo">
+    <h1>Mural de Aniversários</h1>
+    <button id="btn-tema" type="button" aria-pressed="false">Tema escuro</button>
+  </header>
+
+  <main>
+    <section class="cadastro" aria-labelledby="titulo-cadastro">
+      <h2 id="titulo-cadastro">Cadastrar pessoa</h2>
+      <form id="form" novalidate>
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" autocomplete="off" required>
+        <p class="erro" id="erro-nome" role="alert"></p>
+
+        <label for="nasc">Data de nascimento</label>
+        <input id="nasc" name="nasc" type="date" required>
+        <p class="erro" id="erro-nasc" role="alert"></p>
+
+        <label for="cor">Cor do cartão</label>
+        <input id="cor" name="cor" type="color" value="#ff6b6b">
+
+        <button type="submit" class="primario">Cadastrar</button>
+      </form>
+    </section>
+
+    <section class="lista" aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Quem já está no mural</h2>
+      <p id="vazio" class="vazio">Ninguém cadastrado ainda. Preencha o formulário para colocar a primeira pessoa no mural.</p>
+      <ul id="pessoas" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
