@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro interativo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Cadastro interativo</h1>
+        <section aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Novo cadastro</h2>
+            <form id="cadastro">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input id="nome" name="nome" autocomplete="name" required maxlength="100">
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
+                </div>
+                <div class="acoes">
+                    <button id="salvar">Cadastrar</button>
+                    <button id="cancelar" type="button" class="secundario" hidden>Cancelar edição</button>
+                </div>
+            </form>
+            <p id="mensagem" role="status"></p>
+        </section>
+        <section aria-labelledby="titulo-lista">
+            <h2 id="titulo-lista">Pessoas cadastradas</h2>
+            <label for="busca">Buscar por nome ou e-mail</label>
+            <input id="busca" type="search">
+            <p id="contagem" aria-live="polite"></p>
+            <div class="tabela">
+                <table aria-labelledby="titulo-lista">
+                    <thead>
+                        <tr><th scope="col">Nome</th><th scope="col">E-mail</th><th scope="col">Ações</th></tr>
+                    </thead>
+                    <tbody id="lista"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
